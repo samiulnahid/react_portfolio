@@ -1,56 +1,82 @@
 @import "../../global.scss";
 
 .testimonial {
-  background-color: crimson;
+  background-color: rgb(236, 252, 245);
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  position: relative;
 
-  .arrow {
-    height: 50px;
-    position: absolute;
-    cursor: pointer;
-
-    &.left {
-      left: 100px;
-      transform: rotateY(180deg);
-    }
-
-    &.right {
-      right: 100px;
-    }
+  h1 {
+    font-size: 40px;
+    display: 200px;
   }
 
-  .sliders {
-    height: 350px;
+  .container-tm {
+    width: 100%;
+    height: 80%;
     display: flex;
-    position: absolute;
-    left: 0;
-    transition: all 1s ease-out;
+    align-items: center;
+    justify-content: center;
 
-    .containers {
-      width: 100vw;
+    .card-tm {
+      background-color: rgb(253, 253, 253);
+      width: 250px;
+      height: 70%;
+      border-radius: 10px;
+      box-shadow: 0px 0px 15px -8px black;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: blue;
-      border-right: 2px solid red;
+      flex-direction: column;
+      justify-content: space-around;
+      padding: 20px;
+      transition: all 1s ease;
 
-      .items {
-        width: 700px;
-        height: 100%;
-        background-color: white;
-        border-radius: 20px;
-        // display: flex;
-        // align-items: center;
-        // justify-content: center;
-        background-color: green;
-        overflow: hidden;
+      &.featured {
+        width: 300px;
+        height: 75%;
+        margin: 0 30px;
+      }
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      .top {
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         img {
-          width: 400px;
-          transform: rotate(-10deg);
+          &.left-top-tm,
+          &.right-top-tm {
+            height: 25px;
+          }
+
+          &.user {
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 30px;
+          }
+        }
+      }
+
+      .center {
+        padding: 10px;
+        border-radius: 10px;
+        background-color: #dbd4d7;
+      }
+      .bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        h3 {
+          margin-bottom: 5px;
+        }
+        h5 {
+          color: gray;
         }
       }
     }

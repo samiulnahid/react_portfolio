@@ -1,73 +1,75 @@
-import React,{useState} from 'react'
+import React from 'react'
 import './testimonial.scss'
 
 const Testimonial = () => {
- const [currentSlide, setCurrentSlide] = useState(0);
-    const data = [
-        {
-        id: "1",
-        icon: "./assets/mobile.png",
-        title: "Web Design",
-        desc:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
-        img:
-            "https://99designs-blog.imgix.net/blog/wp-content/uploads/2018/10/attachment_100040756-e1538485934255.jpeg?auto=format&q=60&fit=max&w=930",
-        },
-        {
-        id: "2",
-        icon: "./assets/globe.png",
-        title: "Mobile Application",
-        desc:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-        img:
-            "https://i.pinimg.com/originals/e9/c9/2f/e9c92f7869d682a6fa5a97fb8a298f30.jpg",
-        },
-        {
-        id: "3",
-        icon: "./assets/writing.png",
-        title: "Branding",
-        desc:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-        img:
-            "https://i.pinimg.com/originals/a9/f6/94/a9f69465d972a004ad581f245d6ad581.jpg",
-        },
-    ];
-// 
-    // const handleClick =(way)=>{
-    //     way === 'left'
-    //        ? setCurrentSlide(currentSlide > 0 ? currentSlide-1 : 2 )
-    //        : setCurrentSlide(currentSlide < data.length-1 ? currentSlide+1 : 0 )
-        
-    // }
 
-    
-  const handleClick = (way) => {
-    way === "left"
-      ? setCurrentSlide(currentSlide > 0 ? currentSlide - 1 : 2)
-      : setCurrentSlide(currentSlide < data.length - 1 ? currentSlide + 1 : 0);
-  };
-  
+     const data = [
+    {
+      id: 1,
+      name: "Tom Durden",
+      title: "Senior Developer",
+      img:
+        "https://images.pexels.com/photos/1680172/pexels-photo-1680172.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      icon: "assets/twitter.png",
+      desc:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat magnam dolorem.",
+    },
+    {
+      id: 2,
+      name: "Alex Kalinski",
+      title: "Co-Founder of DELKA",
+      img:
+        "https://images.pexels.com/photos/428321/pexels-photo-428321.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      icon: "assets/youtube.png",
+      desc:
+        " Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat magnam dolorem recusandae perspiciatis ducimus vel hic temporibus. ",
+      featured: true,
+    },
+    {
+      id: 3,
+      name: "Martin Harold",
+      title: "CEO of ALBI",
+      img:
+        "https://images.pexels.com/photos/3863793/pexels-photo-3863793.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      icon: "assets/linkedin.png",
+      desc:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat magnam dolorem",
+    },
+  ];
+ 
 
     return (
         <div className="testimonial" id="testimonial">
-            <div 
-                className="sliders"
-                //  style={{transform:`translateX(-${currentSlide * 100}vw)`}}
-                style={{ transform:`translateX(-${currentSlide * 100}vw)` }}
-            >
-                {data.map(d=>(
+            <h1>
+                Testimonial
+            </h1>
+            <div className="container-tm">
 
-                    <div className="containers">
-                        <div className="items" >
-                                <img src={d.img} alt=""/>
-                            </div>
+                {data.map(d=>( 
+                    <div className={d.featured ? "card-tm featured" : "card-tm"}>
+                        <div className="top">
+                            <img src="assets/right-arrow.png" className="left-top-tm" alt=""/>
+                            <img
+                                className="user" 
+                                src={d.img}
+                                alt=""
+                            />
+
+                            <img className="right-top-tm" src={d.icom }alt=""/>
                         </div>
-                    
-                        ))
-                }
+
+                        <div className="center">
+                           {d.desc}
+                        </div>
+
+                        <div className="bottom">
+                            <h3>{d.name}</h3>
+                            <h5>{d.title}</h5>
+                        </div>
+                    </div>
+                ))}
             </div>
-            <img src="assets/arrow.png" className="arrow left" alt="" onClick={()=>handleClick("left")}/>
-            <img src="assets/arrow.png" className="arrow right" alt="" onClick={()=>handleClick()}/>
+
         </div>
     )
 }
