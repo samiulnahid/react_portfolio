@@ -1,0 +1,58 @@
+@import "../../global.scss";
+
+.testimonial {
+  background-color: crimson;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  .arrow {
+    height: 50px;
+    position: absolute;
+    cursor: pointer;
+
+    &.left {
+      left: 100px;
+      transform: rotateY(180deg);
+    }
+
+    &.right {
+      right: 100px;
+    }
+  }
+
+  .sliders {
+    height: 350px;
+    display: flex;
+    position: absolute;
+    left: 0;
+    transition: all 1s ease-out;
+
+    .containers {
+      width: 100vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: blue;
+      border-right: 2px solid red;
+
+      .items {
+        width: 700px;
+        height: 100%;
+        background-color: white;
+        border-radius: 20px;
+        // display: flex;
+        // align-items: center;
+        // justify-content: center;
+        background-color: green;
+        overflow: hidden;
+
+        img {
+          width: 400px;
+          transform: rotate(-10deg);
+        }
+      }
+    }
+  }
+}

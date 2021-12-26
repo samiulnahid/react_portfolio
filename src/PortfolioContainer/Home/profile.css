@@ -1,0 +1,71 @@
+.profile-container {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  height: 10%;
+  min-height: fit-content;
+  background-image: url("../../assets/background-picture.jpg");
+}
+
+.profile-parent {
+  color: white;
+  display: flex;
+
+  align-items: center;
+}
+.profile-details-name {
+  font-size: 24px;
+}
+.profile-details-role {
+  display: flex;
+  flex-direction: column;
+  margin: 14px 0 24px 0;
+}
+
+.profile-details-role h1 {
+  font-size: 40px;
+}
+
+.highlighted-text {
+  color: #fdb211;
+}
+
+.profile-role-tagline {
+  font-size: 19px;
+  margin: 5px 0 0 0;
+}
+.profile-picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 0 0 white;
+  border-radius: 50%;
+  height: 380px;
+  width: 380px;
+  margin: 0 0 0 100px;
+}
+
+.profile-picture-background {
+  height: 92%;
+  width: 92%;
+  background-image: url("../../assets/3cake.jpg");
+  background-size: cover;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 1s ease-out;
+}
+.profile-picture-background:hover {
+  transform: scale(1.07);
+}
+
+.colz-icon i {
+  color: white;
+  padding: 8px;
+  padding-left: 0px;
+}
+
+.colz-icon i:hover {
+  transform: scale(1.5);
+}
